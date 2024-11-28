@@ -73,12 +73,12 @@ class Blockchain:
             current_block = self._chain[i]
             previous_block = self._chain[i - 1]
 
-            # Check if the current block's previous_hash matches the previous block's hash
-            if current_block.previous_hash != previous_block.current_hash:
+            # Check if the current block's hash, and previous block's hash are valid
+            if current_block.validate() and previous_block.validate():
                 return False
 
-            # Check if the current block's hash is valid
-            if current_block.validate() and previous_block.validate():
+            # Check if the current block's previous_hash matches the previous block's hash
+            if current_block.previous_hash != previous_block.current_hash:
                 return False
 
         return True

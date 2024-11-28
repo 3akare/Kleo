@@ -2,7 +2,6 @@ from flask import Flask, jsonify, request
 from classes.Blockchain import Blockchain
 from classes.DatabaseConnection import DatabaseConnection
 
-
 app = Flask(__name__)
 db_connection = DatabaseConnection("mongodb://localhost:27017", "blockchain_db", "blocks")
 blockchain = Blockchain(db_connection)
