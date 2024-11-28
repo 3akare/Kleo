@@ -28,9 +28,12 @@ class Block:
             'current_hash': self.current_hash,
         }
 
+    def set_current_hash(self, current_hash):
+        self.current_hash = current_hash
+
     def __str__(self):
         """String representation of the block"""
-        return f"Block(index={self.index}, current_hash={self.current_hash[:8]}...)"
+        return f"Block(index={self.index}, current_hash={self.current_hash[:8]}, data={self.data}, previous_hash={self.previous_hash})"
 
     @staticmethod
     def get_block_count():

@@ -45,6 +45,7 @@ class Blockchain:
                     block_data["previous_hash"],
                 )
             )
+            self._chain[-1].set_current_hash(block_data['current_hash'])
 
     def save_block_to_db(self, block):
         """Save a block to the database"""
@@ -62,6 +63,10 @@ class Blockchain:
         """Return the number of blocks in the blockchain"""
         return len(self._chain)
 
+    def get_blockchain(self):
+        """Return blockchain"""
+        return self._chain
+
     def validate_blockchain(self):
         """Validate the integrity of the blockchain"""
         for i in range(1, len(self._chain)):
@@ -73,9 +78,7 @@ class Blockchain:
                 return False
 
             # Check if the current block's hash is valid
-            if current_block.current_hash != self.create_hash(
-                current_block.index, current_block.data, current_block.previous_hash
-            ):
+            if current_block.validate() and previous_block.validate():
                 return False
 
         return True
