@@ -23,7 +23,7 @@ export default function TransferTable({ refresh }: { refresh: boolean }) {
         const fetchData = async () => {
             try {
                 setLoading(true);
-                const response = await fetch("http://localhost:8080/blockchain", {
+                const response = await fetch("https://kleo-dkxb.onrender.com/blockchain", {
                     method: "GET",
                 });
                 if (!response.ok) {

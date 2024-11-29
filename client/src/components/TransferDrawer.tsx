@@ -21,7 +21,7 @@ export default function TransferDrawer({refreshTable}:{refreshTable: (p: (prevSt
 
     const submitData = async (amount: number) => {
         try {
-            const response = await fetch("http://localhost:8080/add_block", {
+            const response = await fetch("https://kleo-dkxb.onrender.com/add_block", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
