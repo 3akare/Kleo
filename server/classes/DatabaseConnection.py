@@ -3,9 +3,7 @@ from pymongo import MongoClient, errors
 class DatabaseConnection:
     def __init__(self, connection_string, db_name, collection_name):
         try:
-            self.client = MongoClient(connection_string, maxPoolSize=50, serverSelectionTimeoutMS=5000)
-            # Trigger server selection to validate connection
-            self.client.admin.command("ping")
+            self.client = MongoClient(connection_string, maxPoolSize=50, serverSelectionTimeoutMS=5000, tls=True, tlsAllowInvalidCertificates=False)
             self.database = self.client[db_name]
             self.collection = self.database[collection_name]
         except errors.ConnectionFailure as e:
