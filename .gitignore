@@ -1,3 +1,4 @@
-../.idea
-__pycache__
+.idea
+server/__pycache__
 server/classes/__pycache__
+server/.env
