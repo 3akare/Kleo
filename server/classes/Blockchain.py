@@ -1,3 +1,5 @@
+import time
+
 from classes.Block import Block
 import hashlib
 
@@ -19,6 +21,7 @@ class Blockchain:
             index=0,
             data=self.GENESIS_BLOCK_DATA,
             previous_hash="0",
+            timestamp=int(time.time())
         )
         self._chain.append(genesis_block)
         self.save_block_to_db(genesis_block)
@@ -30,6 +33,7 @@ class Blockchain:
             index=previous_block.index + 1,
             data=data,
             previous_hash=previous_block.current_hash,
+            timestamp=int(time.time())
         )
         self._chain.append(new_block)
         self.save_block_to_db(new_block)
@@ -43,6 +47,7 @@ class Blockchain:
                     block_data["index"],
                     block_data["data"],
                     block_data["previous_hash"],
+                    block_data["timestamp"]
                 )
             )
             self._chain[-1].set_current_hash(block_data['current_hash'])

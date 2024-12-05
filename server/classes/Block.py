@@ -4,12 +4,12 @@ import hashlib
 class Block:
     _no_of_blocks = 0  # Keep track of the number of blocks created
 
-    def __init__(self, index, data, previous_hash):
+    def __init__(self, index, data, previous_hash, timestamp):
         """Initialize a Block"""
         self.index = index
         self.data = data
         self.previous_hash = previous_hash
-        self.timestamp = int(time.time())
+        self.timestamp = timestamp
         self.current_hash = self.calculate_hash()
         Block._no_of_blocks += 1
 
