@@ -16,7 +16,7 @@ export default function TransferDrawer({refreshTable}:{refreshTable: (p: (prevSt
     const [amount, setAmount] = useState(2000); // Default cryptocurrency amount
 
     function onClick(adjustment: number) {
-        setAmount(Math.max(10, Math.min(100000, amount + adjustment))); // Limits between 10 and 100000
+        setAmount(Math.max(100, Math.min(100000, amount + adjustment))); // Limits between 10 and 100000
     }
 
     const submitData = async (amount: number) => {
@@ -55,7 +55,7 @@ export default function TransferDrawer({refreshTable}:{refreshTable: (p: (prevSt
                                 size="icon"
                                 className="h-8 w-8 shrink-0 rounded-full"
                                 onClick={() => onClick(-100)}
-                                disabled={amount <= 10}
+                                disabled={amount <= 100}
                             >
                                 <Minus />
                                 <span className="sr-only">Decrease</span>
