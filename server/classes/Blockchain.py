@@ -1,6 +1,5 @@
 import time
-
-from classes.Block import Block
+from Block import Block
 import hashlib
 
 class Blockchain:

@@ -1,9 +1,18 @@
 from pymongo import MongoClient, errors
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+mode = os.getenv("MODE")
+
 
 class DatabaseConnection:
     def __init__(self, connection_string, db_name, collection_name):
         try:
-            self.client = MongoClient(connection_string, maxPoolSize=50, serverSelectionTimeoutMS=5000, tls=True, tlsAllowInvalidCertificates=False)
+            if mode == "development":
+                self.client = MongoClient(connection_string, maxPoolSize=50, serverSelectionTimeoutMS=5000)
+            else:
+                self.client = MongoClient(connection_string, maxPoolSize=50, serverSelectionTimeoutMS=5000, tls=True, tlsAllowInvalidCertificates=False)
             self.database = self.client[db_name]
             self.collection = self.database[collection_name]
         except errors.ConnectionFailure as e:
