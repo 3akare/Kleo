@@ -1,6 +1,7 @@
 import time
-from Block import Block
 import hashlib
+from server.classes.Block import Block
+
 
 class Blockchain:
     GENESIS_BLOCK_DATA = "Genesis Block"  # Constant for genesis block data
