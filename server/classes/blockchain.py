@@ -1,6 +1,6 @@
 import time
 import hashlib
-from server.classes.Block import Block
+from .block import Block
 
 
 class Blockchain:

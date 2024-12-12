@@ -1,6 +1,6 @@
 from pymongo import MongoClient, errors
-import os
 from dotenv import load_dotenv
+import os
 
 load_dotenv()
 mode = os.getenv("MODE")

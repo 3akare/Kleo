@@ -1,7 +1,7 @@
 from flask import Flask, jsonify, request
 from flask_cors import CORS
-from classes.Blockchain import Blockchain
-from classes.DatabaseConnection import DatabaseConnection
+from classes.blockchain import Blockchain
+from classes.databaseConnection import DatabaseConnection
 import os
 from dotenv import load_dotenv
 
