@@ -113,8 +113,4 @@ Contributions are welcome! Submit a pull request or report issues in the GitHub 
 
 ## License  
 
-This project is licensed under the MIT License.  
-
----  
-
-**Kleo** is a simple yet powerful tool for understanding blockchain technology. Experiment, learn, and build with it!
+This project is licensed under the MIT License.
