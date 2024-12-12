@@ -10,7 +10,12 @@ load_dotenv()
 app = Flask(__name__)
 CORS(app, origins='*')
 
-mongo_uri = os.getenv("MONGO_URI")
+mongo_uri = ""
+
+if os.getenv("MODE") == "development":
+    mongo_uri = os.getenv("MONGO_URI_DEV")
+else:
+    mongo_uri = os.getenv("MONGO_URI")
 
 db_connection = DatabaseConnection(mongo_uri, "blockchain_db", "blocks")
 blockchain = Blockchain(db_connection)
