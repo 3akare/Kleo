@@ -79,7 +79,7 @@ curl localhost:8080
 ```  
 You will now receive a message indicating that the connection is blocked:  
 ```bash
-"Connection refused" or a sye
+"Connection refused"
 ```
 ### Additional
 ```bash
