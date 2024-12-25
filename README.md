@@ -5,7 +5,8 @@
 ## Features  
 
 1. **Blockchain Fundamentals**  
-   - A **Block** class that encapsulates:  
+   - A **Block** class that encapsulates: 
+     - **index**: Index of the block
      - **Data**: Transaction or information stored in the block.  
      - **Previous Hash**: Reference to the previous block in the chain.  
      - **Timestamp**: Time the block was created.  
@@ -26,7 +27,8 @@
 
 ### Block Class  
 Handles individual blocks in the blockchain.  
-- **Attributes**:  
+- **Attributes**:
+  - `index`: Index of the block
   - `data`: Payload for the block.  
   - `previousHash`: Hash of the previous block in the chain.  
   - `timestamp`: Block creation timestamp.  
